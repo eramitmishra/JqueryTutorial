@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>:: Identify Image Orientation with JavaScript ::</title>
+    <script>
+        (function() {
+            var orientation, img = new Image();
+            img.src = "https://images.gta-travel.com/HH/Images/EM/DXB/DXB-9N-1.jpg";
+            img.onload = function() {
+                if (img.naturalWidth > img.naturalHeight) {
+                    orientation = 'landscape';
+                } else if (img.naturalWidth < img.naturalHeight) {
+                    orientation = 'portrait';
+                } else {
+                    orientation = 'even';
+                }
+                document.body.innerHTML += '<p></p><br/><img src="' + img.src + '"/><h3>' + orientation + '</h3>';
+            }
+
+        })();
+    </script>
+    <style type="text/css">
+        body {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            background-color: #333;
+            color: #fff;
+        }
+        
+        img {
+            border: 5px solid #fff;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Discover Image Orientation with JavaScript</p>
+
+</body>
+
+</html>
